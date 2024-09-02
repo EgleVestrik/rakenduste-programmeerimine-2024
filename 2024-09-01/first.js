@@ -29,3 +29,9 @@ console.log(arrAddNumbersShort(1,2));
 const addnumbersNested = (num1) => (num2) =>num1+num2
 
 console.log(addnumbersNested(3)(4));
+
+//ARROW FUNCTION 
+
+const greet=(firstName)=>'Hello ' + firstName;
+
+console.log(greet("Egle"))
