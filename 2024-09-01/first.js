@@ -35,3 +35,23 @@ console.log(addnumbersNested(3)(4));
 const greet=(firstName)=>'Hello ' + firstName;
 
 console.log(greet("Egle"))
+
+//add +5 to each element
+
+const addFive=arr.map(element=>element+5);
+console.log(addFive);
+
+
+//
+const threeParams=arr.map((index,array,element)=>element+5);
+//version 2
+
+const threeParameters = newArray.map((element, index, array) => {
+    console.log(element, index, array);
+  
+    const added = 1 + 2;
+  
+    return element + 5;
+  });
+  
+  console.log({ threeParameters: threeParameters });
