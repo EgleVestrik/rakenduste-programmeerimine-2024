@@ -5,6 +5,7 @@ import Counter from "./components/Counter"
 import PropDrilling from "./components/PropDrilling"
 import Show from "./components/Show"
 import Context from "./components/Context"
+import Person from "./components/Person"
 
 
 function App() {
@@ -37,6 +38,13 @@ function App() {
 
   return (
     <>
+      
+      <Person name="Egle"
+      hobbie="boba tasting"
+      email="egleves"
+      />
+      <button class="person2">Action</button>
+      
       <Context />
       <Show
         show={show}
