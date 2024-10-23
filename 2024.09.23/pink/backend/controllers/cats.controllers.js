@@ -1,27 +1,40 @@
-const cats = [];
-exports.create = (req, res) => {
-    const{name} = req.body;
-    
-    cats.push({
-        id:crypto.randomUUID(),
-        name: name
-    })
+const cats = [
+    {
+      id: "7d613b93-fa3e-4ef3-a9d2-e09e5ca6e4e6",
+      name: "Meow",
+      createdAt: 1727098800585,
+      updatedAt: null,
+      deleted: false,
+    },
+    {
+      id: "2dc9ce08-d345-4fed-8560-4c6b66fb0836",
+      name: "Kitty",
+      createdAt: 1727098952739,
+      updatedAt: null,
+      deleted: false,
+    },
+  ];
 
-    res.send(req.body);
+exports.create = (req, res) => {
+    const {name} = req.body;
+
+    const newCat = {
+        id: crypto.randomUUID(),
+        name: name,
+        createdAt: Date.now(),
+        updatedAt: null,
+        deleted:false,
+    }
+
+    cats.push(newCat);
+
+    res.send(newCat);
 };
 
 exports.read = (req, res) => {
-    res.send("ok");
+    res.send(cats);
 };
 
-exports.update = (req, res) => {
-    //vaja kätte saada id, et teada mida muuta
+exports.update = (req, res) => {};
 
-};
-
-exports.delete = (req, res) => {
-
-//leia idõ
-
-
-};
+exports.delete = (req, res) => {};

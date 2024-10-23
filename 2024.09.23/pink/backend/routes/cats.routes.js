@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const catsController = require("../controllers/cats.controller");
+const catsController = require("../controllers/cats.controllers");
 const {
   catsRouteMiddleware,
   catsGetRouteMiddleware,
