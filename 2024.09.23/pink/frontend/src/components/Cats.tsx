@@ -2,6 +2,7 @@ import { Box, List, ListItem, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import SubmitCat from "./SubmitCat";
 
+
 type Cat = {
   id: string;
   name: string;

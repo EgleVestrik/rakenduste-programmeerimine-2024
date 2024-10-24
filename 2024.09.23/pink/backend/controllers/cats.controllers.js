@@ -53,9 +53,9 @@ exports.update = (req, res) => {
 };
 
 exports.delete = (req, res) => {
-  const { id } = req.params; 
+  const { name } = req.params; 
 
-  const catsItem = cats.find(item => item.id === id);
+  const catsItem = cats.find(item => item.name === name);
 
   if (catsItem) {
      
