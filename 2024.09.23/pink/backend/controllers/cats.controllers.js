@@ -35,6 +35,34 @@ exports.read = (req, res) => {
     res.send(cats);
 };
 
-exports.update = (req, res) => {};
+exports.update = (req, res) => {
+  const { id } = req.params; 
+  const { name } = req.body; 
 
-exports.delete = (req, res) => {};
+  const catsItem = cats.find(item => item.id === id);
+
+  if (catsItem && !catsItem.deleted) {
+ 
+      if (name) catsItem.name = name;
+      catsItem.updatedAt = Date.now();
+
+      return res.send(catsItem);
+  } else {
+      return res.send({ message: "cats not found or deleted" });
+  }
+};
+
+exports.delete = (req, res) => {
+  const { id } = req.params; 
+
+  const catsItem = cats.find(item => item.id === id);
+
+  if (catsItem) {
+     
+      catsItem.deleted = true;
+
+      return res.send({ message: "cats marked as deleted", todoItem });
+  } else {
+      return res.send({ message: "cats not found" });
+  }
+};

@@ -8,6 +8,7 @@ const {
 
 router.use(catsRouteMiddleware);
 
+
 // /cats/ Get endpoint level middleware
 router.get("/", catsGetRouteMiddleware, catsController.read);
 router.post("/", catsController.create);
