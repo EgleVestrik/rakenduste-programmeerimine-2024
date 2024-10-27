@@ -23,7 +23,7 @@ const SubmitCat = ({ fetchCats }: SubmitCatProps) => {
         console.log("Success", response);
         // Snackbar success
       } else {
-        console.warn("No success");
+        console.warn("Fail");
         // Snackbar
       }
     } catch (error) {

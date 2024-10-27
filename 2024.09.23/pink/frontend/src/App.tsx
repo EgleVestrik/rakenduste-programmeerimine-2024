@@ -3,11 +3,23 @@ import "./App.css";
 import Cats from "./components/Cats";
 import Cats2 from "./components/Cats2";
 import Todo from "./components/Todo";
-import { Container, CssBaseline } from "@mui/material";
+import { createTheme } from '@mui/material/styles';
+import { green } from '@mui/material/colors';
+import { Container, CssBaseline, ThemeProvider } from "@mui/material";
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: green[500],
+    },
+  },
+});
+
 
 function App() {
   return (
     <>
+    <ThemeProvider theme={theme}>
     <React.Fragment >
       <CssBaseline />
       <Container fixed sx={{ bgcolor: '#f7a6f9'  }} >
@@ -22,6 +34,7 @@ function App() {
         <Todo />
       </Container>
     </React.Fragment>
+    </ThemeProvider>
     
 
 
