@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require("cors");
+const { query } = require('express-validator');
 const app = express();
 const port = 8080;
 app.use(cors());
@@ -17,7 +18,14 @@ app.use("/cats", catsRoutes);
 app.get('/', (req, res) => {
   res.send('Hello World Egle!')
 })
+app.get('/hello', query('name').notEmpty(), (req, res) => {
+  const result = validationResult(req);
+  if (result.isEmpty()) {
+    return res.send(`Hello, ${req.query.name}!`);
+  }
 
+  res.send({ errors: result.array() });
+})
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
